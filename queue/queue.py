@@ -5,7 +5,7 @@ class Queue:
         self.queue = []
         
     def isFull(self):
-        return self.rear - self.front + 1 == self.capacity;
+        return self.rear + 1 == self.capacity;
     
     def isEmpty(self):
         return self.front == -1 and self.rear == -1
@@ -65,3 +65,4 @@ if __name__ == '__main__':
     queue.dequeue()   
     queue.display()
     print(queue.peek())
+    queue.enqueue(99)

@@ -9,10 +9,10 @@ public class Queue {
         this.queue = new int[capacity];
     }
     public Boolean isEmpty(){
-        return this.rear == -1 and this.front == -1;
+        return this.rear == -1 && this.front == -1 ;
     }
     public Boolean isFull(){
-        return this.rear - this.front + 1 == this.capacity;
+        return this.rear + 1 == this.capacity;
     }
     public void enqueue(int item){
         if (this.isFull()){
@@ -91,6 +91,8 @@ class Test {
         System.out.println(queue.size());
         System.out.println(queue.peek());
         queue.display();
+        queue.enqueue(99);
+
 
 
     }
