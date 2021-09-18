@@ -30,16 +30,8 @@ public class Queue {
             System.out.println("Queue is empty. Dequeue operation can not be performed...");
             System.exit(1);
         }
-        int temp = this.queue[this.front];
-        int i = this.front;
-        while (i <= this.rear){
-            this.queue[i] = this.queue[i+1];
-            i++;
-        }
-        this.queue[this.rear] = 0;
-        this.rear--;
-
-        if (this.isEmpty()){
+        int temp = this.queue[this.front++];
+        if (this.front > this.rear){
             this.front = -1;
             this.rear = -1;
         }
@@ -81,8 +73,6 @@ class Test {
         queue.enqueue(5);
         queue.display();
         System.out.println(queue.peek());
-        queue.dequeue();
-        System.out.println(queue.peek());
 
         queue.display();
         queue.enqueue(10);
@@ -90,12 +80,18 @@ class Test {
         queue.enqueue(15);
         System.out.println(queue.size());
         queue.enqueue(20);
-        queue.enqueue(25);
+        //queue.enqueue(25); //error queue is full
         System.out.println(queue.peek());
         queue.display();
         //System.out.println(queue.peek());
         //queue.enqueue(30); // Error : Queue is full
         System.out.println(queue.size());
+
+        queue.dequeue();
+        System.out.println(queue.size());
+        System.out.println(queue.peek());
+        queue.display();
+
 
     }
 }
