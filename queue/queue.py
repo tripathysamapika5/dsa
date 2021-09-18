@@ -66,3 +66,11 @@ if __name__ == '__main__':
     queue.display()
     print(queue.peek())
     queue.enqueue(99)
+    queue.dequeue()
+    queue.dequeue()
+    queue.dequeue()
+    queue.dequeue()
+
+    queue.enqueue(5)
+    queue.enqueue(15)
+    queue.display()

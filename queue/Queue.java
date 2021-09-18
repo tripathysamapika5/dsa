@@ -1,6 +1,6 @@
 public class Queue {
-    int front, rear, capacity;
-    int queue[];
+    private int front, rear, capacity;
+    private int queue[];
 
     Queue(int capacity){
         this.capacity = capacity;
@@ -91,8 +91,15 @@ class Test {
         System.out.println(queue.size());
         System.out.println(queue.peek());
         queue.display();
-        queue.enqueue(99);
+        //queue.enqueue(99); //error
+        queue.dequeue();
+        queue.dequeue();
+        queue.dequeue();
+        queue.dequeue();
 
+        queue.enqueue(5);
+        queue.enqueue(15);
+        queue.display();
 
 
     }
