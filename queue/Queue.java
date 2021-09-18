@@ -9,7 +9,7 @@ public class Queue {
         this.queue = new int[capacity];
     }
     public Boolean isEmpty(){
-        return this.rear == -1;
+        return this.rear == -1 and this.front == -1;
     }
     public Boolean isFull(){
         return this.rear - this.front + 1 == this.capacity;
