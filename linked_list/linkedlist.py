@@ -77,6 +77,32 @@ class LinkedList:
                 currentNode = currentNode.next
             print(final_str)
     
+    def search(self, item):
+        ''' This method traverses across the linkedlist and returns true if element is there is the linkedlist else returns false'''
+        currentNode = self.__head
+        while currentNode:
+            if currentNode.value == item:
+                return True
+            currentNode = currentNode.next
+        return False
+            
+    def sortLinkedList(self):
+        ''' This method sorts the linkedlist in ascending order'''
+        if not self.__head:
+            return None;
+        else:
+            currentNode = self.__head
+            while currentNode:
+                indexNode = currentNode.next
+                while indexNode:
+                    if indexNode.value < currentNode.value:
+                        temp = currentNode.value
+                        currentNode.value = indexNode.value
+                        indexNode.value = temp
+                    indexNode = indexNode.next
+                currentNode = currentNode.next
+   
+    
     def size(self):
         ''' This method returns the size of the linkedlist'''
         return self.__size
@@ -84,6 +110,7 @@ class LinkedList:
 if __name__=='__main__':
     linked_list = LinkedList();
     
+    print(linked_list.search(25))
     linked_list.insertStart(5);
     linked_list.insertStart(10);
     linked_list.insertEnd(15);
@@ -116,4 +143,9 @@ if __name__=='__main__':
             
     linked_list.remove(99);
     linked_list.traverse();
-    print("size : ",linked_list.size());            
+    print("size : ",linked_list.size());    
+    linked_list.sortLinkedList()   
+    linked_list.traverse();
+    print(linked_list.search(99))
+    print(linked_list.search(25))
+

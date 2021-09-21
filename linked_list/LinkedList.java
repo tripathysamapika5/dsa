@@ -7,7 +7,7 @@ public class LinkedList {
     private int size;
 
     /**declaring the static Node class*/
-    static class Node{
+    private class Node{
         int value;
         Node next;
         Node(int item){
@@ -109,6 +109,36 @@ public class LinkedList {
         }
 
     }
+    public Boolean search(int item) {
+        /**This method traverses across the linkedlist and returns true if element is there is the linkedlist else returns false */
+        Node currentNode = this.head;
+        while (currentNode != null){
+            if (currentNode.value == item){
+                return true;
+            }
+            currentNode = currentNode.next;
+        }
+        return false;
+    }
+
+    public void sortLinkedList(){
+        /** This method sorts the linkedlist in ascending order*/
+        Node currentNode = this.head;
+        while(currentNode != null){
+            Node indexNode = currentNode.next;
+            while(indexNode != null){
+                if (currentNode.value > indexNode.value){
+                    int temp  = currentNode.value;
+                    currentNode.value = indexNode.value;
+                    indexNode.value = temp;
+                }
+                indexNode = indexNode.next;
+            }
+            currentNode = currentNode.next;
+        }
+
+    }
+
     public int size(){
         /** This Method returns the size of the linkedlist*/
         return this.size;
@@ -155,6 +185,11 @@ class Test {
         linked_list.remove(99);
         linked_list.traverse();
         System.out.println("size : "+linked_list.size());
+
+        linked_list.sortLinkedList();
+        linked_list.traverse();
+        System.out.println(linked_list.search(25));
+        System.out.println(linked_list.search(99));
 
     }
 }
