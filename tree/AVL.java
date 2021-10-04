@@ -206,7 +206,7 @@ public class AVL {
         return node.data;
     }
 
-    public int getMinValue(){
+    public Integer getMinValue(){
         /**
          * It will find the min value in the AVL tree
          * Time complexity : O(logN)
@@ -217,7 +217,7 @@ public class AVL {
         return this.getMin(this.root);
     }
 
-    public int getMaxValue(){
+    public Integer getMaxValue(){
         /**
          * It will find the max value in the AVL tree
          * Time complexity : O(logN)
@@ -263,6 +263,8 @@ public class AVL {
 class Test1{
     public static void main(String args[]){
         AVL avl_tree = new AVL();
+        System.out.println("Min : "+avl_tree.getMinValue());
+        System.out.println("Max : "+avl_tree.getMaxValue());
         System.out.println(avl_tree.root);
 
         avl_tree.insert(10);
