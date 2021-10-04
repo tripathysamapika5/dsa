@@ -212,7 +212,7 @@ public class AVL {
          * Time complexity : O(logN)
          */
         if(this.root == null){
-            return (Integer)null;
+            return null;
         }
         return this.getMin(this.root);
     }
@@ -223,7 +223,7 @@ public class AVL {
          * Time complexity : O(logN)
          */
         if(this.root == null){
-            return (Integer)null;
+            return null;
         }
         return this.getMax(this.root);
     }
